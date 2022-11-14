@@ -67,7 +67,6 @@ li{
 
 /* introduction */
 #introduction_web{
-  margin: 40px 0px;
   position: relative;
   padding: 40px 3%;
   background-color: #fff9e4;
@@ -126,6 +125,9 @@ li{
     max-width: 1150px;
     margin-right: auto;
     margin-left: auto;
+}
+.why_us-img{
+  margin-top: 10px;
 }
 .why_us-title{
   margin: 0;
