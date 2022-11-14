@@ -262,17 +262,17 @@ $(document).ready(function() {
 // $('#slider-parallax').stellar();
 
 
-    $(function(){
+    // $(function(){
 
-      $.stellar({
+    //   $.stellar({
 
-        horizontalScrolling: false,
+    //     horizontalScrolling: false,
 
-        verticalOffset: 40
+    //     verticalOffset: 40
 
-      });
+    //   });
 
-    });
+    // });
 
 
 	 /* ==============================================
