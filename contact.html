@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
     <!--Font-Awesome-->
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" integrity="sha512-DD6Lm09YDHzhW3K4eLJ9Y7sFrBwtCF+KuSWOLYFqKsZ6RX4ifCu9vWqM4R+Uy++aBWe6wD4csgQRzGKp5vP6tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Owl-Slider-->
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
@@ -131,36 +132,43 @@
       </div>
       <div class="col-md-7 col-sm-7 form-wrap">
         <div id="error_message"></div>
-        <form id="main-contact-form" name="contact-form" method="post" action="#" onsubmit="return validate();">
+        <form id="main-contact-form" name="contactForm" method="get"  action="index.html" onsubmit="return (validateForm());">
           <div class="row  wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="col-sm-6">
               <div class="form-group">
-                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First name" >
+                <input type="text" name="firstName" id="" class="form-control" placeholder="First name" >
+                <div class="error" id="fnameErr"></div>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last name" >
+                <input type="text" name="lastName" id="" class="form-control" placeholder="Last name" >
+                <div class="error" id="lnameErr"></div>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <input type="email" name="email" id="email" class="form-control" placeholder="Email" >
+            <input type="email" name="email" id="" class="form-control" placeholder="Email" >
+            <div class="error" id="emailErr"></div>
           </div>
           <div class="form-group">
-            <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone" >
+            <input type="text" name="phone" id="" class="form-control" placeholder="Phone" >
+            <div class="error" id="phoneErr"></div>
           </div>
           <div class="form-group">
-            <input type="text" name="CompanyName" id="companyName" class="form-control" placeholder="Company Name" >
+            <input type="text" name="CompanyName" id="" class="form-control" placeholder="Company Name" >
+            <div class="error" id="CnameErr"></div>
           </div>
           <div class="form-group">
-            <input type="text" name="ProjectOverview" id="projectOverview" class="form-control" placeholder="Project Overview" >
+            <input type="text" name="ProjectOverview" id="" class="form-control" placeholder="Project Overview" >
+            <div class="error" id="ProjectErr"></div>
           </div>
           <div class="form-group">
-            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" ></textarea>
+            <textarea name="message" id="" class="form-control" rows="4" placeholder="Enter your message" ></textarea>
+            <div class="error" id="messageErr"></div>
           </div>
         
-          <button type="submit" class="btn-send">Send Now </button> 
+          <button type="submit" class="btn-send" value="Submit">Send Now </button> 
         </form>
       </div>
     </div>

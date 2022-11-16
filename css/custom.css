@@ -702,6 +702,7 @@ li{
 	-o-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
+
 .form-wrap button.btn-send{
   color: #e73131;
   border: 2px solid #e73131;
@@ -716,6 +717,9 @@ li{
   text-align: center;
   font-size: 14px;
   transition: all 0.5s ease;
+}
+.form-group .error{
+  color:#e73131;
 }
 
 .form-wrap{

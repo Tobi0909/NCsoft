@@ -1,55 +1,128 @@
-/* contact */
-function validate(){
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var companyName = document.getElementById("companyName").value;
-    var projectOverview = document.getElementById("ProjectOverview").value;
-    var message = document.getElementById("message").value;
-    var error_message = document.getElementById("error_message");
-  
-    error_message.style.padding = "10px";
-    
-    var text;
-    if(firstName.length < 2){
-      text = "Please Enter valid Name";
-      error_message.innerHTML = text;
-      return false;
+function printError(elemId, hintMsg) {
+  document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function validateForm() {
+  var firstName = document.contactForm.firstName.value;
+  var lastName = document.contactForm.lastName.value;
+  var email = document.contactForm.email.value;
+  var phone = document.contactForm.phone.value;
+  var CompanyName = document.contactForm.CompanyName.value;
+  var ProjectOverview = document.contactForm.ProjectOverview.value;
+  var message = document.contactForm.message.value;
+
+  var fnameErr =
+    (lnameErr =
+    emailErr =
+    phoneErr =
+    CnameErr =
+    ProjectErr =
+    messageErr =
+      true);
+
+  if (firstName == "") {
+    printError("fnameErr", "Please enter your name");
+  } else {
+    var regex = /^[a-zA-Z\s]+$/;
+    if (regex.test(firstName) === false) {
+      printError("fnameErr", "Please enter a valid name");
+    } else {
+      printError("fnameErr", "");
+      fnameErr = false;
     }
-    if(lastName.length < 2){
-      text = "Please Enter valid Name";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(companyName.length < 2){
-      text = "Please Enter Correct Subject";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(projectOverview.length < 2){
-      text = "Please Enter Correct Subject";
-      error_message.innerHTML = text;
-      return false;
-    }
-  
-    if(isNaN(phone) || phone.length < 9 ){
-      text = "Please Enter valid Phone Number";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(email.indexOf("@") == -1 || email.length < 6){
-      text = "Please Enter valid Email";
-      error_message.innerHTML = text;
-      return false;
-    }
-  
-    if(message.length <= 140){
-      text = "Please Enter More Than 140 Characters";
-      error_message.innerHTML = text;
-      return false;
-    }
-    alert("Form Submitted Successfully!");
-    return true;
-  
   }
+
+  if (lastName == "") {
+    printError("lnameErr", "Please enter your name");
+  } else {
+    var regex = /^[a-zA-Z\s]+$/;
+    if (regex.test(lastName) === false) {
+      printError("lnameErr", "Please enter a valid name");
+    } else {
+      printError("lnameErr", "");
+      lnameErr = false;
+    }
+  }
+
+  if (email == "") {
+    printError("emailErr", "Please enter your email address");
+  } else {
+    var regex = /^\S+@\S+\.\S+$/;
+    if (regex.test(email) === false) {
+      printError("emailErr", "Please enter a valid email address");
+    } else {
+      printError("emailErr", "");
+      emailErr = false;
+    }
+  }
+
+  if (phone == "") {
+    printError("phoneErr", "Please enter your mobile number");
+  } else {
+    var regex = /^\d{10}$/;
+    if (regex.test(phone) === false) {
+      printError("phoneErr", "Please enter a valid 10 digit mobile number");
+    } else {
+      printError("phoneErr", "");
+      phoneErr = false;
+    }
+  }
+
+  if (CompanyName == "") {
+    printError("CnameErr", "Please Enter Correct Subject");
+  } else {
+    printError("CnameErr", "");
+    CnameErr = false;
+  }
+
+  if (ProjectOverview == "") {
+    printError("ProjectErr", "Please Enter Correct Subject");
+  } else {
+    printError("ProjectErr", "");
+    ProjectErr = false;
+  }
+
+  if (message == "") {
+    printError("messageErr", "Please select your message");
+  } else {
+    printError("messageErr", "");
+    messageErr = false;
+  }
+
+  if (
+    (fnameErr ||
+      lnameErr ||
+      emailErr ||
+      phoneErr ||
+      CnameErr ||
+      ProjectErr ||
+      messageErr) == true
+  ) {
+    return false;
+  } else {
+    var dataPreview =
+      "You've entered the following details: \n" +
+      "firstName: " +
+      fname +
+      "\n" +
+      "lastName: " +
+      lname +
+      "\n";
+    "Email: " +
+      email +
+      "\n" +
+      "Phone: " +
+      phone +
+      "\n" +
+      "CompanyName: " +
+      CompanyName +
+      "\n" +
+      "ProjectOverview: " +
+      ProjectOverview +
+      "\n" +
+      "message: " +
+      message +
+      "\n";
+  }
+  alert(dataPreview);
+}
